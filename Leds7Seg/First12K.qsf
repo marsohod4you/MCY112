@@ -241,8 +241,8 @@ set_location_assignment PIN_12 -to sound_out_r
 set_location_assignment PIN_11 -to sound_out_l
 set_location_assignment PIN_14 -to flash_csb
 set_location_assignment PIN_16 -to flash_clk
-set_location_assignment PIN_18 -to flash_io0
-set_location_assignment PIN_17 -to flash_io1
+set_location_assignment PIN_17 -to flash_io0
+set_location_assignment PIN_18 -to flash_io1
 set_location_assignment PIN_15 -to flash_io2
 set_location_assignment PIN_13 -to flash_io3
 
