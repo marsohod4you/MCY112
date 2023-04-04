@@ -1,0 +1,13 @@
+MSYS-1.0.18 Build:2012-11-21 22:34
+Exception: STATUS_ACCESS_VIOLATION at eip=6085A8EA
+eax=60EA314C ebx=00000000 ecx=00000000 edx=60EA3150 esi=0062E680 edi=2E31762F
+ebp=0062EA88 esp=0062D670 program=D:\Programs\ImgTech\Internals\msys\bin\make.exe
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
+0062EA88  6085A8EA  (00000000, 0062EAF0, 2E31762F, 0A028A18)
+0062EAB8  6085CCD6  (00000000, 00000003, 0062EAF0, 2E31762F)
+0062EAD8  6080E0B6  (0062EAF0, 2E31762F, 0062EF58, 0040C619)
+0062EF08  608829F6  (6C6C6568, 2E31762F, 632F3A30, 6F72502F)
+3142720 [main] make 15892 handle_exceptions: Exception: STATUS_ACCESS_VIOLATION
+3163010 [main] make 15892 handle_exceptions: Error while dumping state (probably corrupted stack)

@@ -1,0 +1,37 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD C:\Users\nick\AppData\Local\Temp\ccI0McMo.o
+LOAD C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+
+.memory         0x0000000000000000      0x154
+                0x0000000000000000                . = 0x0
+ *(.init)
+ .init          0x0000000000000000        0x8 C:\Users\nick\AppData\Local\Temp\ccI0McMo.o
+ *(.text)
+ .text          0x0000000000000008        0x0 C:\Users\nick\AppData\Local\Temp\ccI0McMo.o
+ .text          0x0000000000000008       0xd4 C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+                0x0000000000000008                output
+                0x0000000000000014                output_seg7
+                0x0000000000000020                gray_encode_simple
+                0x000000000000002c                gray_encode_bitwise
+                0x0000000000000064                gray_decode
+                0x000000000000007c                gray
+ *(*)
+ .data          0x00000000000000dc        0x0 C:\Users\nick\AppData\Local\Temp\ccI0McMo.o
+ .bss           0x00000000000000dc        0x0 C:\Users\nick\AppData\Local\Temp\ccI0McMo.o
+ .data          0x00000000000000dc        0x0 C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+ .bss           0x00000000000000dc        0x0 C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+ .text.startup  0x00000000000000dc       0x3c C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+                0x00000000000000dc                main
+ .comment       0x0000000000000118       0x39 C:\Users\nick\AppData\Local\Temp\cczN8lza.o
+                                         0x3a (size before relaxing)
+                0x0000000000000154                . = ALIGN (0x4)
+ *fill*         0x0000000000000151        0x3 
+                0x0000000000000154                end = .
+OUTPUT(firmware.elf elf32-littleriscv)
