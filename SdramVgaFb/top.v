@@ -205,6 +205,10 @@ begin
 	read_video_fifo_ <= read_video_fifo;
 end
 
+reg app_rd_valid_;
+always @(posedge w_mem_clk)
+	app_rd_valid_ <= app_rd_valid;
+
 `ifdef __ICARUS__ 
 generic_fifo_dc_gray #( .dw(32), .aw(8) ) u_generic_fifo_dc_gray (
 	.rd_clk(w_video_clk),
@@ -212,7 +216,7 @@ generic_fifo_dc_gray #( .dw(32), .aw(8) ) u_generic_fifo_dc_gray (
 	.rst(~w_reset),
 	.clr(),
 	.din(app_rd_data),
-	.we(app_rd_valid),
+	.we(app_rd_valid_),
 	.dout(w_fifo_out),
 	.rd(read_video_fifo),
 	.full(),
@@ -229,7 +233,7 @@ ViFifo u_vfifo(
 	.rdclk(w_video_clk),
 	.rdreq(read_video_fifo),
 	.wrclk(w_mem_clk),
-	.wrreq(app_rd_valid),
+	.wrreq(app_rd_valid_),
 	.q(w_fifo_out),
 	.rdempty(w_fifo_empty),
 	.wrusedw(usedw)
