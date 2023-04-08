@@ -118,8 +118,8 @@ serial2spi serial2spi_inst(
 	//spi interface to flash
 	.spi_csb(flash_csb),
 	.spi_clk(flash_clk),
-	.spi_do(flash_io1),
-	.spi_di(flash_io0)
+	.spi_do(flash_io0),
+	.spi_di(flash_io1)
 	);
 	
 assign flash_io2 = 1'b1;
