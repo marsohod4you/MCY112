@@ -40,13 +40,16 @@ def print_ba(s,ba):
 	print(s,rs)
 
 def spi_flash_rw( ba ) :
-	print_ba( "> ",ba )
+	len_ba = len(ba)
+	if len_ba<10 :
+		print_ba( "> ",ba )
 	reverse_bits_ba( ba )
 	port.write( ba )
-	time.sleep(0.1)
-	r = port.read( len(ba) )
-	print_ba( "< ",r )
-	return r
+	#time.sleep(0.1)
+	r = port.read( len_ba+1 )
+	if len_ba<10 :
+		print_ba( "< ",r )
+	return r[0:len_ba]
 
 def spi_flash_power_up() :
 	cmdAB = bytearray([0xAB,0x00,0x00,0x00,0x00])
