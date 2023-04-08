@@ -241,8 +241,8 @@ set_location_assignment PIN_12 -to sound_out_r
 set_location_assignment PIN_11 -to sound_out_l
 set_location_assignment PIN_14 -to flash_csb
 set_location_assignment PIN_16 -to flash_clk
-set_location_assignment PIN_18 -to flash_io0
-set_location_assignment PIN_17 -to flash_io1
+set_location_assignment PIN_17 -to flash_io0
+set_location_assignment PIN_18 -to flash_io1
 set_location_assignment PIN_15 -to flash_io2
 set_location_assignment PIN_13 -to flash_io3
 
@@ -261,5 +261,3 @@ set_global_assignment -name VERILOG_FILE serial.v
 set_global_assignment -name VERILOG_FILE seg4x7.v
 set_global_assignment -name QIP_FILE MyPLL.qip
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
-set_global_assignment -name SIGNALTAP_FILE stp1.stp
-set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
