@@ -27,7 +27,7 @@ module testbench;
 	);
 
 	wire spi_csb, spi_clk, spi_do, spi_di;
-	serial2spi sr2spi(
+	serial2spi #(.RCONST(64) ) sr2spi(
 		.reset( reset ),
 		.clk( clk ),	//100MHz
 	
@@ -78,7 +78,7 @@ module testbench;
 		send_uart( 8'h00 );
 		send_uart( 8'h00 );
 		send_uart( 8'h00 );
-		#10000;
+		#30000;
 		send_uart( 8'h9F );
 		send_uart( 8'h00 );
 		send_uart( 8'h00 );

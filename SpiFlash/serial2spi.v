@@ -35,6 +35,8 @@ reg [3:0]num_bits = 10;
 assign onum_bits = num_bits;
 wire num_bits10; assign num_bits10 = (num_bits==10);
 reg endpkt=1'b0;
+reg [1:0]csbfix=2'b00;
+reg final_send_imp;
 
 always @( posedge clk )
 begin
@@ -50,7 +52,9 @@ begin
 		endpkt <= 1'b0;
 	end
 	else
-		endpkt <= 1'b1;
+		endpkt <= 1'b1 & (~busy);
+	csbfix <= {csbfix[0],spi_csb};
+	final_send_imp <= (csbfix==2'b01);
 end
 
 always @( posedge clk )
@@ -98,7 +102,7 @@ reg send_imp = 1'b0;
 always @( posedge clk )
 begin
 	spi_clk_r <= {spi_clk_r[0],spi_clk};
-	send_imp <= (spi_clk_r==2'b01)&(num_bits==8);
+	send_imp <= (spi_clk_r==2'b01)&(num_bits==8) | final_send_imp;
 	if(spi_clk_r==2'b01)
 		spi_data <= { spi_data[6:0],spi_di };
 end
