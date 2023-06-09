@@ -232,7 +232,7 @@ always @( posedge mem_clk )
 	endcase
 
 always @(posedge mem_clk)
-	if( mem_rd_req & mem_ack)
+	if( (mem_rd_req & mem_ack) | reset )
 		mem_rd_req<=1'b0;
 	else
 	if(~mem_rd_req && state!=STATE_WAIT_WRWND && state!=STATE_WRITE_PIXEL && state!=STATE_WAIT_WRITTEN )
