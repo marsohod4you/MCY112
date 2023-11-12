@@ -3,7 +3,7 @@
 На плату MCY112 может устанавливается платка VGA от Raspberry Pi.
 Вот так:
 
-![MCY112+VGA photo](../images/mcy112_vga_small.jpg "MCY112 FPGA board photo")
+![MCY112+VGA photo](../images/mcy112_mbftdi_vga_small.jpg "MCY112 FPGA board photo")
 
 К VGA разъему платы подключается монитор.
 
