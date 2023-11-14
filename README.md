@@ -1,6 +1,4 @@
-# MCY112
-MCY112 FPGA board
-
+# MCY112 FPGA board
 ![MCY112+VGA photo](images/mcy112_crop_small.jpg "MCY112 FPGA board photo")
 
 Плата MCY112 простая, но вполне подходит для изучения возможностей ПЛИС. На этой плате мы и светодиодами поморгать сможем и систему на кристалле с процессором RISC-V запустим.
