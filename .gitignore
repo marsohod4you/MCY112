@@ -1,0 +1,13 @@
+*.rpt
+*.vcd
+*.done
+*.fit.summary
+*.jdi
+*.map.summary
+*.pin
+*.pof
+*.svf
+*.bak
+*.tan.summary
+*/db/
+*/incremental_db/
