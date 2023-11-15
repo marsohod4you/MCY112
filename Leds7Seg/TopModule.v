@@ -121,7 +121,7 @@ always @(posedge clk100 )
 reg [31:0]counter=32'hF0F0F0F0;
 always @(posedge clk50)
 	if( key[0]==1'b0 ) //reset
-		counter <= 32'h0;
+		counter <= 32'hFFFFFFFF;
 	else
 	if( key[1]==1'b0 ) //count backward
 		counter <= counter-1;
